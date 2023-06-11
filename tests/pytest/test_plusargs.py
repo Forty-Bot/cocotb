@@ -20,7 +20,7 @@ test_module_path = (
 
 sys.path.insert(0, str(test_module_path))
 
-
+@pytest.mark.skipif(os.getenv("SIM") == "nvc", reason="NVC doesn't support plusargs")
 def test_toplevel_library():
 
     hdl_toplevel_lang = os.getenv("HDL_TOPLEVEL_LANG", "verilog")

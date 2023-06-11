@@ -906,7 +906,12 @@ GpiObjHdl *VhpiImpl::get_root_handle(const char *name) {
         return NULL;
     }
 
+    /* NVC returns Names instead of CaseNames */
+#ifdef NVC
+    if (name != NULL && strcasecmp(name, found)) {
+#else
     if (name != NULL && strcmp(name, found)) {
+#endif
         LOG_WARN("VHPI: DUT '%s' doesn't match requested toplevel %s", found,
                  name);
         return NULL;

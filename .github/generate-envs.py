@@ -126,6 +126,16 @@ ENVS = [
         # See also https://github.com/cocotb/cocotb/issues/2300
         "group": "experimental",
     },
+    # Test NVC on Ubuntu
+    {
+        "lang": "vhdl",
+        "sim": "nvc",
+        "sim-version": "master",
+        "os": "ubuntu-latest",
+        "python-version": "3.8",
+        "group": "experimental",
+        "may-fail": True,
+    },
     # Test other OSes
     # Icarus homebrew
     {
